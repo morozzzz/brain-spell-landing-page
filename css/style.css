@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Comic Kings';
-  src: url('/fonts/Comic_Kings.ttf') format('truetype');  
+  src: url('../fonts/Comic_Kings.ttf') format('truetype');  
   font-weight: normal;
   font-style: normal;
 }
@@ -15,14 +15,21 @@ html, body {
 }
 
 header {
-z-index: 1;
-color: white;
-font-family: 'Comic Kings';
-font-size: 40px;
-
+  z-index: 1;
+  color: white;
+  font-family: 'Comic Kings';
+  font-size: 40px;
+  cursor: default;
+  letter-spacing: 10px;
+  text-shadow:
+    -3px -3px 0 rgb(66, 66, 66),  
+    3px -3px 0 rgb(66, 66, 66),
+    -3px 3px 0 rgb(66, 66, 66),
+    3px 3px 0 rgb(66, 66, 66);
 }
 
 canvas {
   position: absolute;
   z-index: 0;
+  background: rgb(8, 8, 8)
 }
