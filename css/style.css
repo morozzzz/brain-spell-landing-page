@@ -1,0 +1,52 @@
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.start-page-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[name='userName'] {
+  outline: none;
+  background: none;   
+  outline: 0; 
+  height: 20px;
+  font-size: 20px;
+}
+
+button[name='play-button'] {
+  font-size: 20px;
+}
+
+.game-canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  z-index: 1;
+}
+
+.modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
