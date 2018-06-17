@@ -9,20 +9,21 @@ var path2 = new Path.Circle({
     strokeColor: 'black',
     opacity: 0
 });
-var fillColor = "#"+((1<<24)*Math.random()|0).toString(16);
+
+var constColorPart2 = "ff00";
 
 function createSymbol() {
-
-    var fillColor = "#"+((1<<24)*Math.random()|0).toString(16);
+    var fillColor2 = "#" + ((1<<24)*Math.random()|0).toString(16).slice(-2);
+    var currentColor = fillColor2+constColorPart2;    
     var path = new Path.Circle({
         center: [0, 0],
-        radius: 7,
+        radius: 5,
         opacity: 1
     });
 
     path.fillColor = {
         gradient: {
-            stops: [[fillColor, 0], [fillColor, 0.7], ['fff0', 1]],
+            stops: [[currentColor, 0], [currentColor, 0.7], ['fff0', 1]],
             radial: true
         },
         origin: path.position,
@@ -43,7 +44,6 @@ var keyVector = new Point(0, 0);
 for (var i = 0; i < nCircles; i++) {
     var symbolCenter = Point.random() * view.size;
     if (i == nCircles-1) {
-
         var placedSymbol = symbol2.place(symbolCenter);
     }
     else {
@@ -86,10 +86,10 @@ function onMouseMove(event) {
     function polarize(val) {
         return -1 + 2*val;
     }
-    vector.x = polarize(d.x < 0);
+    vector.x = polarize(d.x < 0)*0;
     rotation.x = polarize(d.x < 0);
     vector.y = polarize(d.y < 0);
-    rotation.y = polarize(d.y < 0);
+    rotation.y = polarize(d.y < 0)*0;
 
     var da = new Point(Math.abs(d.x), Math.abs(d.y));
     da *= mouseScale/5;
