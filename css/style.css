@@ -31,5 +31,5 @@ header {
 canvas {
   position: absolute;
   z-index: 0;
-  background: rgb(8, 8, 8)
+  background: rgb(8, 8, 8);
 }
