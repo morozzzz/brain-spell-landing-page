@@ -9,6 +9,7 @@ var path2 = new Path.Circle({
     strokeColor: 'black',
     opacity: 0
 });
+var fillColor = "#"+((1<<24)*Math.random()|0).toString(16);
 
 function createSymbol() {
 
@@ -16,7 +17,7 @@ function createSymbol() {
     var path = new Path.Circle({
         center: [0, 0],
         radius: 7,
-        opacity: 0.7
+        opacity: 1
     });
 
     path.fillColor = {
@@ -51,7 +52,6 @@ for (var i = 0; i < nCircles; i++) {
         placedSymbol.scale(i / nCircles);
     }
 }
-
 
 function onFrame(event) {
     function checkOutOfBounds(item){

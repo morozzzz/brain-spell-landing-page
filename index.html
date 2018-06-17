@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="fonts/font_awesome/web-fonts-with-css/css/fontawesome-all.css">
     <script type="text/javascript" src="paper.js"></script>
     <script type="text/paperscript" src="paper-js-stars.js" canvas="stars"></script>
+    <script type="text/javascript" src="lightbox.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,72 @@
     </header>
     <main>
         <div class="about-game">
-
+            <div class="sreen-shots">
+                <div class="preview row">
+                    <div class="column">
+                        <img src="images/screen1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                    </div>
+                    <div class="column">
+                        <img src="images/screen2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    </div>
+                </div>
+                <div class="preview row">
+                    <div class="column">
+                        <img src="images/screen1.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                    </div>
+                    <div class="column">
+                        <img src="images/screen2.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                    </div>
+                </div>
+                    
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                    
+                        <div class="mySlides">                    
+                            <img src="images/screen1.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides">
+                            <img src="images/screen2.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides">
+                            <img src="images/screen3.jpg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides">
+                            <img src="images/screen4.jpg" style="width:100%">
+                        </div>
+                                            
+                        <div class="slides row">
+                            <div class="column">
+                                <img class="demo cursor" src="images/screen1.jpg" style="width:100%" onclick="currentSlide(1)" alt="game screen">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/screen2.jpg" style="width:100%" onclick="currentSlide(2)" alt="game screen">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/screen3.jpg" style="width:100%" onclick="currentSlide(3)" alt="game screen">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/screen4.jpg" style="width:100%" onclick="currentSlide(4)" alt="game screen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="discription">
+                <p>
+                    Kkmskfvmzpkdfmcvpdlf,vpldfvdfvf  dfsdf b
+                    dfb  dfb dfb dfmbo dlmf,bl dfm,vbkl dmf,n 
+                    dfgdfbbog ,og, go ,go ,go ,go ,go ,go ,game
+                    dfgob,dfog,bod,gob,fgb,fog,bofg, 
+                    g o,fog ,fo,g ofg, fg,bofg 
+                    fg of,go f,g ogf, ogf ,gfl ,
+                </p>
+            </div>
+            
         </div>
         <div class="start-game-button-wrapper">
             <a target="_blank" href="https://morozzzz.github.io/brain-spell">
