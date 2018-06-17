@@ -87,9 +87,9 @@ function onMouseMove(event) {
         return -1 + 2*val;
     }
     vector.x = polarize(d.x < 0);
-    rotation.x = polarize(d.x < 0)*0;
+    rotation.x = polarize(d.x < 0);
     vector.y = polarize(d.y < 0);
-    rotation.y = polarize(d.y < 0)*0;
+    rotation.y = polarize(d.y < 0);
 
     var da = new Point(Math.abs(d.x), Math.abs(d.y));
     da *= mouseScale/5;

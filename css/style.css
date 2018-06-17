@@ -5,31 +5,90 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Trend Sans One';
+  src: url('../fonts/TrendSansOne.ttf') format('truetype');  
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   width:  100%;
   height: 100%;
   margin: 0px;
   text-align: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
   z-index: 1;
   color: white;
   font-family: 'Comic Kings';
-  font-size: 40px;
+  font-size: calc(100vw/30);
   cursor: default;
   letter-spacing: 10px;
   text-shadow:
-    -3px -3px 0 rgb(66, 66, 66),  
-    3px -3px 0 rgb(66, 66, 66),
-    -3px 3px 0 rgb(66, 66, 66),
-    3px 3px 0 rgb(66, 66, 66);
+  calc(-100vw/200) calc(-100vw/200) calc(100vw/50) rgba(0, 247, 255, 0.664),  
+  calc(100vw/200) calc(-100vw/200) calc(100vw/50) rgba(115, 255, 0, 0.651),
+  calc(-100vw/200) calc(100vw/200) calc(100vw/50) rgba(0, 68, 255, 0.575),
+  calc(100vw/200) calc(100vw/200) calc(100vw/50) rgba(247, 0, 255, 0.753);
+
 }
 
 canvas {
   position: absolute;
   z-index: 0;
   background: rgb(8, 8, 8);
+}
+
+main {
+  z-index: 1;
+
+}
+
+.start-game-button-wrapper {
+
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  z-index: 1;
+}
+
+.play-button-image {
+  width: calc(100vw/10);
+}
+
+.author {
+  font-family: 'Trend Sans One';
+  font-size: 15px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.author::before {
+content: "by";
+font-size: 15px;
+}
+
+.links {
+  margin-bottom: 15px;
+}
+.fa-github {
+  font-size: 20px;
+  color: white;
+}
+
+.fa-vk {
+  color: white;
+  font-size: 20px;
+}
+
+.fab:hover {
+  transform: scale(1.2);
 }
