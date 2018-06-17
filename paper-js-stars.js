@@ -15,7 +15,7 @@ function createSymbol() {
     var fillColor = "#"+((1<<24)*Math.random()|0).toString(16);
     var path = new Path.Circle({
         center: [0, 0],
-        radius: 10,
+        radius: 7,
         opacity: 0.7
     });
 
