@@ -57,6 +57,7 @@ main {
   justify-content: space-between;
   width: 80%;
   height: 70%;
+  max-width: 1300px;
 }
 
 .about-game {
