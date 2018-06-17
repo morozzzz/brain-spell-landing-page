@@ -34,6 +34,10 @@ slides[slideIndex-1].style.display = "block";
 dots[slideIndex-1].className += " active";
 }
 
-document.getElementById('myModal').onclick = closeModal;
-  
+document.getElementById('myModal').addEventListener('click', (e) => {
+    if(e.target.classList.contains('modal')) {
+        closeModal();
+    }        
+});
+
 
