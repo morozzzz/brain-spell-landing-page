@@ -1,43 +1,60 @@
-var nCircles = 150;
+var nCircles = 100;
 var parallaxScale = 20;
 var mouseScale = 40;
 
-// Create a symbol, which we will place instances of later
-var path = new Path.Circle({
-    center: [0, 0],
-    radius: 5,
-    fillColor: 'white',
-    strokeColor: 'black'
-});
 var path2 = new Path.Circle({
     center: [0, 0],
     radius: 10,
-    fillColor: 'red',
-    strokeColor: 'black'
+    fillColor: '',
+    strokeColor: 'black',
+    opacity: 0
 });
 
-var symbol = new Symbol(path);
+function createSymbol() {
+
+    var fillColor = "#"+((1<<24)*Math.random()|0).toString(16);
+    var path = new Path.Circle({
+        center: [0, 0],
+        radius: 10,
+        opacity: 0.7
+
+    });
+
+    path.fillColor = {
+        gradient: {
+            stops: [[fillColor, 0], [fillColor, 0.7], ['fff0', 1]],
+            radial: true
+        },
+        origin: path.position,
+        destination: path.bounds.rightCenter
+    };
+
+    var symbol = new Symbol(path);
+
+    return symbol;
+}
+
 var symbol2 = new Symbol(path2);
 
 var vector = new Point(0, 0);
 var rotation = new Point(0, 0);
 var keyVector = new Point(0, 0);
 
-// Place each symbol in a random point in the view
 for (var i = 0; i < nCircles; i++) {
     var symbolCenter = Point.random() * view.size;
     if (i == nCircles-1) {
+
         var placedSymbol = symbol2.place(symbolCenter);
     }
     else {
-        var placedSymbol = symbol.place(symbolCenter);
+        var currentSymbol = createSymbol();
+        var placedSymbol = currentSymbol.place(symbolCenter);
         placedSymbol.scale(i / nCircles);
     }
 }
 
-// The onFrame function is called up to 60 times a second
+
 function onFrame(event) {
-    // If the item has exited the view on one side, move it to the other side
     function checkOutOfBounds(item){
         if (item.bounds.left > view.size.width) {
             item.position.x = 0;
@@ -53,12 +70,8 @@ function onFrame(event) {
         }
     }
 
-    // Run through the active layer's children list and change
-    // the position of the placed symbols
     for (var i = 0; i < nCircles; i++) {
         var item = project.activeLayer.children[i];
-        // Each item moves a fraction of its width
-        // so that larger circles move faster than smaller circles
         item.position.x += vector.x*(item.bounds.width / parallaxScale) - rotation.x + keyVector.x;
         item.position.y += vector.y*(item.bounds.width / parallaxScale) - rotation.y + keyVector.y;
 
@@ -68,7 +81,6 @@ function onFrame(event) {
     }
 }
 
-// mouse movement controls rotation of view
 function onMouseMove(event) {
     var d = (event.point - view.center)/view.center;
 
@@ -81,7 +93,7 @@ function onMouseMove(event) {
     rotation.y = polarize(d.y < 0);
 
     var da = new Point(Math.abs(d.x), Math.abs(d.y));
-    da *= mouseScale;
+    da *= mouseScale/2;
     var vectorScale = da;
     var rotationScale = da/2;
 
@@ -89,26 +101,3 @@ function onMouseMove(event) {
     rotation *= rotationScale;
 }
 
-// keys control center of view
-function onKeyDown(event) {
-    if(event.key == 'left') {
-        keyVector.x = 2;
-    }
-    if(event.key == 'right') {
-        keyVector.x = -2;
-    }
-    if(event.key == 'up') {
-        keyVector.y = 2;
-    }
-    if(event.key == 'down') {
-        keyVector.y = -2;
-    }
-}
-function onKeyUp(event) {
-    if(event.key == 'left' || event.key == 'right') {
-        keyVector.x = 0;
-    }
-    else if(event.key == 'up' || event.key == 'down') {
-        keyVector.y = 0;
-    }
-}

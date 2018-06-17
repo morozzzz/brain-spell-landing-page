@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Comic Kings';
+  src: url('/fonts/Comic_Kings.ttf') format('truetype');  
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   width:  100%;
   height: 100%;
@@ -7,46 +14,15 @@ html, body {
   justify-content: center;
 }
 
-.start-page-content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+header {
+z-index: 1;
+color: white;
+font-family: 'Comic Kings';
+font-size: 40px;
+
 }
 
-input[name='userName'] {
-  outline: none;
-  background: none;   
-  outline: 0; 
-  height: 20px;
-  font-size: 20px;
-}
-
-button[name='play-button'] {
-  font-size: 20px;
-}
-
-.game-canvas-wrapper {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  position: relative;
-  z-index: 1;
-}
-
-.modal {
+canvas {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0);
-  z-index: 100;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hidden {
-  display: none;
+  z-index: 0;
 }
