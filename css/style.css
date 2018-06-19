@@ -19,34 +19,38 @@
 html, body {
   width:  100%;
   height: 100%;
-  margin: 0px;
+  margin: 0;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-header {
+header { 
+  position: relative;
   z-index: 1;
+  height: 15%;
+}
+
+h1 {
+  margin-top: 2vh;
   color: white;
   font-family: 'Comic Kings';
-  font-size: 30px;
+  font-size: 5vh;
   cursor: default;
-  letter-spacing: 10px;
+  letter-spacing: calc(100vw/100);;
   text-shadow:
   -3px -3px 6px rgba(0, 247, 255, 0.664),  
   3px -3px 6px rgba(115, 255, 0, 0.651),
   -3px 3px 6px rgba(0, 68, 255, 0.575),
   3px 3px 6px rgba(247, 0, 255, 0.753);
-  display: flex;
-  height: 10%;
 }
 
 canvas {
   position: absolute;
   z-index: 0;
-  background: rgb(8, 8, 8);
+  background: rgb(26, 26, 26);
+  top: 0;
+  left: 0;
 }
 
 main {
@@ -55,35 +59,89 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   height: 70%;
   max-width: 1300px;
+  margin: 0 auto;
 }
 
 .about-game {
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 50%;
+}
+
+.about-game ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sreen-shots-discription-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
 }
 
 .sreen-shots {
   width: 50%;
+  min-width: 478px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 20vh;
 }
 
 .discription {
   color: white;
   font-family: 'Trend Sans One';
   font-style: normal;
-  font-weight: normal;
+  font-weight: lighter;
+  font-size: 2vh;
   width: 50%;
+  min-width: 447px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discription li { 
+  margin-bottom: 1.5vh;
+}
+
+.discription li span {
+  margin-top: 1vh;
+  display: block;
+  text-shadow:
+  -3px -3px 10px rgba(255, 0, 0, 0.521),  
+  3px -3px 10px rgba(255, 0, 0, 0.363),
+  -3px 3px 10px rgba(255, 0, 0, 0.253),
+  3px 3px 10px rgba(255, 0, 0, 0.39);
+}
+
+.how-to-play {
+  color: white;
+  font-family: 'Trend Sans One';
+  width: 90%;
+  min-width: 807px;
+  font-size: 1.5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.how-to-play li {
+  margin-bottom: 1vh;
 }
 
 .start-game-button-wrapper {
+  z-index: 1;
+  position: relative;
   width: 100%;
-  height: 43%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -92,7 +150,7 @@ a {
 
 .play-button-image {
   width: 20%;
-  max-width: 180px;
+  max-width: 100px;
 }
 
 .play-button-image:hover {
@@ -103,82 +161,81 @@ a {
   content: "PUSH THIS BUTTON TO PLAY!";
   color: white;
   font-family: 'Comic Kings';
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: 3vh;
   display: block;
+  margin-bottom: 3vh;
+  text-shadow: 
+    -3px -3px 10px rgba(255, 0, 0, 0.521),  
+    3px -3px 10px rgba(255, 0, 0, 0.363),
+    -3px 3px 10px rgba(255, 0, 0, 0.253),
+    3px 3px 10px rgba(255, 0, 0, 0.39);
 }
 
 footer {
   z-index: 1;
+  position: relative;
   display: flex;
-  height: 7%;
+  align-items: center;
+  justify-content: center;
+  height: 13%;
 }
 
 .author {
+
   font-family: 'Trend Sans One';
-  font-size: 15px;
+  font-size: 1.5vh;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 1vh;
 }
 
 .author::before {
-content: "by";
-font-size: 15px;
+  content: "by";
+  font-size: 1vh;
 }
 
-.fa-github {
-  font-size: 20px;
+.fab {
+  margin-top: 0;
+  font-size: 2vh;
   color: #ffffff;
-}
-
-.fa-vk {
-  color: #ffffff;
-  font-size: 20px;
+  z-index: 1;
 }
 
 .fab:hover {
   transform: scale(1.2);
 }
 
-.sreen-shots img {
-  border-radius: 5px;
-}
-
 .preview img:hover {
   opacity: 0.7;
+}
+
+.preview img { 
+border-radius:0.5vh;
 }
 
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%
+  width: 70vh;
 }
 
 .row > .column {
   padding: 0 5px;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .column {
-  float: left;
   width: 40%;
 }
 
 .modal {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 2;
-  padding-top: 100px;
+  padding-top: 10vh;
   left: 0;
   top: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.883);
 }
@@ -188,16 +245,16 @@ font-size: 15px;
   margin: auto;
   padding: 0;
   width: calc(100vh/1.2);
-  height: 100%;
+  height: 65%;
   max-width: calc(100vw/1.2);
 }
 
 .close {
   color: white;
   position: absolute;
-  top: 10px;
+  top: 2vh;
   right: 25px;
-  font-size: 35px;
+  font-size: 5vh;
   font-weight: bold;
 }
 
@@ -212,57 +269,25 @@ font-size: 15px;
   display: none;
 }
 
+.mySlides img {
+  border-radius: 0.7vh;
+}
 .cursor {
   cursor: pointer;
 }
 
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-img {
-  margin-bottom: -4px;
-}
-
 .slides {
-  text-align: center;
   background-color: black;
-  padding: 2px 16px;
+  padding: 1vh 16px;
   color: white;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 0vh;
+  width: 100%;
+}
+
+.slides img {
+  border-radius: 0.4vh;
 }
 
 .demo {

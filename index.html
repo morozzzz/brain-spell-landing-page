@@ -4,89 +4,97 @@
     <title>Brain Spell</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/font_awesome/web-fonts-with-css/css/fontawesome-all.css">
-    <script type="text/javascript" src="paper.js"></script>
-    <script type="text/paperscript" src="paper-js-stars.js" canvas="stars"></script>
-    <script type="text/javascript" src="lightbox.js" defer></script>
+    <script type="text/javascript" src="/scripts/paper.js"></script>
+    <script type="text/paperscript" src="/scripts/paper-js-stars.js" defer canvas="stars"></script>
+    <script type="text/javascript" src="/scripts/lightbox.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>BRAIN SPELL</h1>
-    </header>
-    <main>
-        <div class="about-game">
-            <div class="sreen-shots">
-                <div class="preview row">
-                    <div class="column">
-                        <img src="./images/screen1.jpg" style="width:100%; transform: rotate(-10deg);" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                    </div>
-                    <div class="column">
-                        <img src="images/screen2.jpg" style="width:100%; transform: rotate(5deg);" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-                    </div>
-                </div>
-                <div class="preview row">
-                    <div class="column">
-                        <img src="images/screen1.jpg" style="width:100%; transform: rotate(3deg);" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-                    </div>
-                    <div class="column">
-                        <img src="images/screen2.jpg" style="width:100%; transform: rotate(-15deg);" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-                    </div>
-                </div>
-                    
-                <div id="myModal" class="modal">
-                    <span class="close cursor" onclick="closeModal()">&times;</span>
-                    <div class="modal-content">
-                    
-                        <div class="mySlides">                    
-                            <img src="images/screen1.jpg" style="width:100%">
-                        </div>
-                    
-                        <div class="mySlides">
-                            <img src="images/screen2.jpg" style="width:100%">
-                        </div>
-                    
-                        <div class="mySlides">
-                            <img src="images/screen3.jpg" style="width:100%">
-                        </div>
-                        
-                        <div class="mySlides">
-                            <img src="images/screen4.jpg" style="width:100%">
-                        </div>
-                                            
-                        <div class="slides row">
+    <div class="header-main-wrapper">
+        <header>
+            <h1>BRAIN SPELL</h1>
+        </header>
+        <main>
+            <div class="about-game">
+                <div class="sreen-shots-discription-wrapper">
+                    <div class="sreen-shots">
+                        <div class="preview row">
                             <div class="column">
-                                <img class="demo cursor" src="images/screen1.jpg" style="width:100%" onclick="currentSlide(1)" alt="game screen">
+                                <img src="./images/screen1.jpg" style="width:100%; transform: rotate(-10deg);" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="images/screen2.jpg" style="width:100%" onclick="currentSlide(2)" alt="game screen">
+                                <img src="images/screen2.jpg" style="width:100%; transform: rotate(5deg);" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                            </div>
+                        </div>
+                        <div class="preview row">
+                            <div class="column">
+                                <img src="images/screen3.jpg" style="width:100%; transform: rotate(3deg);" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="images/screen3.jpg" style="width:100%" onclick="currentSlide(3)" alt="game screen">
+                                <img src="images/screen4.jpg" style="width:100%; transform: rotate(-15deg);" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
                             </div>
-                            <div class="column">
-                                <img class="demo cursor" src="images/screen4.jpg" style="width:100%" onclick="currentSlide(4)" alt="game screen">
+                        </div>                        
+                        <div id="myModal" class="modal">
+                            <span class="close cursor" onclick="closeModal()">&times;</span>
+                            <div class="modal-content">                        
+                                <div class="mySlides">                    
+                                    <img src="images/screen1.jpg" style="width:100%">
+                                </div>                        
+                                <div class="mySlides">
+                                    <img src="images/screen2.jpg" style="width:100%">
+                                </div>                        
+                                <div class="mySlides">
+                                    <img src="images/screen3.jpg" style="width:100%">
+                                </div>                            
+                                <div class="mySlides">
+                                    <img src="images/screen4.jpg" style="width:100%">
+                                </div>                                                
+                                <div class="slides row">
+                                    <div class="column">
+                                        <img class="demo cursor" src="images/screen1.jpg" style="width:100%" onclick="currentSlide(1)" alt="game screen">
+                                    </div>
+                                    <div class="column">
+                                        <img class="demo cursor" src="images/screen2.jpg" style="width:100%" onclick="currentSlide(2)" alt="game screen">
+                                    </div>
+                                    <div class="column">
+                                        <img class="demo cursor" src="images/screen3.jpg" style="width:100%" onclick="currentSlide(3)" alt="game screen">
+                                    </div>
+                                    <div class="column">
+                                        <img class="demo cursor" src="images/screen4.jpg" style="width:100%" onclick="currentSlide(4)" alt="game screen">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <article class="discription">                    
+                        <ul>
+                            <li>Test your knowledge while playing!</li>
+                            <li>Solve tasks and defeat evil monsters</li>
+                            <li>Use your brain to cause crushing spells</li>
+                            <li>Hold on as long as possible</li>
+                            <li>Take first place in the top of the <span>most smartest wizards!</span></li>
+                        </ul>                       
+                    </article> 
+                </div>                                       
+                <article class="how-to-play">
+                        <h2>How to play</h2>
+                        <ul>
+                            <li>Enter the name and click "start game"</li>
+                            <li>Choose a task from the magic scroll</li>
+                            <li>Solve the task</li>
+                            <li>If the solution was correct, the magic would work and damage the monster</li>
+                            <li>If not, well, do not worry! Next time you will definitely answer right!</li>
+                            <li>Next the monster's turn. I hope he misses:)</li>
+                            <li>If the monster is crushed, it's time to deal with the next one</li>
+                            <li>If the monster could defeat you, see the top 10 best players. Are you there?</li>
+                        </ul>                      
+                </article>            
             </div>
-            <div class="discription">
-                <p>
-                    Kkmskfvmzpkdfmcvpdlf,vpldfvdfvf  dfsdf b
-                    dfb  dfb dfb dfmbo dlmf,bl dfm,vbkl dmf,n 
-                    dfgdfbbog ,og, go ,go ,go ,go ,go ,go ,game
-                    dfgob,dfog,bod,gob,fgb,fog,bofg, 
-                    g o,fog ,fo,g ofg, fg,bofg 
-                    fg of,go f,g ogf, ogf ,gfl ,
-                </p>
+            <div class="start-game-button-wrapper">
+                <a target="_blank" href="https://morozzzz.github.io/brain-spell">
+                    <img class="play-button-image" src="images/button.png" alt="start-game-button">
+                </a>
             </div>
-            
-        </div>
-        <div class="start-game-button-wrapper">
-            <a target="_blank" href="https://morozzzz.github.io/brain-spell">
-                <img class="play-button-image" src="images/button.png" alt="start-game-button">
-            </a>
-        </div>
-    </main>
+        </main>
     <footer>
             <div class="about-author">
                 <div class="author">
@@ -98,6 +106,6 @@
                 </div>
             </div>
     </footer>
-    <canvas id="stars" style="width:100%; height:100%;" resize></canvas>
+    <canvas id="stars" resize></canvas>
 </body>
 </html>

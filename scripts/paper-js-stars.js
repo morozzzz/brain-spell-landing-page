@@ -58,14 +58,14 @@ function onFrame(event) {
         if (item.bounds.left > view.size.width) {
             item.position.x = 0;
         }
-        if (item.bounds.top > view.size.height) {
+        if (item.bounds.top >  view.size.height) {
             item.position.y = 0;
         }
         if (item.bounds.right < 0) {
             item.position.x = view.size.width;
         }
         if (item.bounds.bottom < 0) {
-            item.position.y = view.size.height;
+            item.position.y =  view.size.height;
         }
     }
 
@@ -99,4 +99,3 @@ function onMouseMove(event) {
     vector *= vectorScale;
     rotation *= rotationScale;
 }
-
